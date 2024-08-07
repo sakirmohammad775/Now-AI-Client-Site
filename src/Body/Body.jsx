@@ -35,6 +35,12 @@ const Body = () => {
                     
                 </div>
             </div>
+
+            {/* bottom part */}
+            <div className="max-w-screen-lg mx-auto mt-24  text-center  ">
+            <input type="text" placeholder="Type here" className="input input-bordered w-[90%] rounded-[42px] " />
+            <p className="text-gray-600 mt-3">NowAI may display inaccurate info, including about people, so double-check its responses. Your privacy and Gemini Apps</p>
+            </div>
         </div>
         </>
     );
