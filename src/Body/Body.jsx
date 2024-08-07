@@ -42,11 +42,7 @@ const Body = () => {
             {/* bottom part */}
             <div className="max-w-screen-lg mx-auto mt-24 text-center relative">
                 <div className="relative w-[90%] mx-auto">
-                    <input
-                        type="text"
-                        placeholder="Enter a Prompt Here"
-                        className="input input-bordered w-full rounded-[42px] pl-12 pr-12"
-                    />
+                   
                     <div className="absolute top-1/2 right-20 transform -translate-y-1/2 text-2xl text-gray-500">
                         <ImFilePicture />
                     </div>
