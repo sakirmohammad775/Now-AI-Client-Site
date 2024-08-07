@@ -6,9 +6,9 @@ const Home = () => {
     return (
         <>
             <div className="max-w-screen-2xl mx-auto">
-                <div className="w-full">
+                <div className="w-full flex">
+                    <Sidebar></Sidebar> 
                     <Body></Body>
-                    <Sidebar></Sidebar>
                 </div>
             </div>
         </>
