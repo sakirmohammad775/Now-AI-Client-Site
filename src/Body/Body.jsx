@@ -14,8 +14,11 @@ const Body = () => {
     return (
         <><div className="w-full">
             <Navbar></Navbar>
+            {/* middle part */}
+
             <div className=" max-w-screen-lg mx-auto pl-10 mt-28">
-                <div>
+                {!showResult?<>
+                    <div>
                     <p className="text-5xl text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-red-900 ">HelloDev.</p>
                     <p className="text-7xl text-gray-400 ">How can I help you today?</p>
                 </div>
@@ -41,6 +44,13 @@ const Body = () => {
 
 
                 </div>
+                </>
+            :
+            <>
+            <div>hello</div>
+            </>    
+            }
+                
             </div>
 
             {/* bottom part */}
