@@ -7,17 +7,28 @@ import { IoMdSend } from "react-icons/io";
 import { useContext } from "react";
 import { Context } from "../Context/Context";
 import image from '../assets/Untitled design.png'
+import styled, { keyframes } from "styled-components";
 
 const Body = () => {
     const { prevPrompts, setPrevPrompts, onSent, recentPrompt, setRecentPrompt, showResult, loading, resultData, input, setInput } = useContext(Context)
-    const loaderStyle = {
-        width: '3rem',
-        height: '',
-        borderRadius: '50%',
-        backgroundColor: 'blue',
-        animation: 'loaderAnimation 1s ease-in-out infinite',
-      };
-    
+
+    const loaderAnimation = keyframes`
+  0% {
+    background-position: -800px 0px;
+  }
+  100% {
+    background-position: 800px 0px;
+  }
+`;
+    const Loader = styled.hr`
+  border-radius: 4px;
+  border: none;
+  background-color: #f6f7f8;
+  background: linear-gradient(to right, #9ed7ff, #ffffff, #9ed7ff);
+  background-size: 800px 50px;
+  height: 20px;
+  animation: ${loaderAnimation} 3s infinite linear;
+`;
 
     return (
         <><div className="w-full">
@@ -48,34 +59,33 @@ const Body = () => {
                             <p className="text-gray-800 text-[20px] p-4"> Suggest beautiful places to see on an upcoming road trip</p>
                             <HiCodeBracket className="mt-10 ml-40 text-2xl" />
                         </div>
-
-
-
                     </div>
                 </>
                     :
                     // otherwise
                     <>
                         <div className="result px-5 py-5% max-h-[70vh] overflow-y-scroll no-scrollbar overflow-auto ">
-                            <div className="result-title flex items-center gap-5">
+                            <div className="result-title flex items-center gap-5 mb-5">
                                 <img src={image} className="h-10 w-10 rounded-full" alt="NowAI" />
                                 <p>{recentPrompt}</p>
                             </div>
-                            <div className="result-data flex">
-                                <MdSnowing className=" m-2 text-7xl text-blue-700" />
+                            <div className=" flex gap-6 mt-5">
+                                <MdSnowing className=" m-2 text-5xl text-blue-700" />
                                 {loading ?
                                     <>
-                                        <div className="loader w-full flex flex-col gap-3  ">
-                                            <hr className="animate-pulse rounded border-none bg-slate-100 bg-gradient-to-r from-blue-100 via-transparent to-blue-100 h-7 w-full" />
-                                            <hr className="animate-spin rounded border-none bg-slate-100 bg-gradient-to-r from-blue-100 via-transparent to-blue-100 h-7 w-full" />
-                                            <hr style={loaderStyle} className="rounded border-none bg-slate-100 bg-gradient-to-r from-blue-100 via-transparent to-blue-100 h-7 w-full" />
-                                            
-
+                                        <div className="w-full flex flex-col gap-2  ">
+                                            <Loader />
+                                            <Loader />
+                                            <Loader />
                                         </div>
                                     </>
-                                    :
-                                    <p className="mt-5 ml-5"
-                                        dangerouslySetInnerHTML={{ __html: resultData }}></p>}
+                                    : <>
+                                        <div className="w-full flex flex-col gap-3 mx-3 ">
+                                            <p className="text-xl font-light mt-4 "
+                                                dangerouslySetInnerHTML={{ __html: resultData }}></p>
+                                        </div>
+                                    </>
+                                }
 
                             </div>
                         </div>
