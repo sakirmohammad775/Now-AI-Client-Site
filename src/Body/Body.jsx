@@ -4,9 +4,13 @@ import { HiCodeBracket } from "react-icons/hi2";
 import { ImFilePicture } from "react-icons/im";
 import { MdKeyboardVoice } from "react-icons/md";
 import { IoMdSend } from "react-icons/io";
+import { useContext } from "react";
+import { Context } from "../Context/Context";
 
 
 const Body = () => {
+    const {prevPrompts,setPrevPrompts,onSent,recentPrompt,setRecentPrompt,showResult,loading,resultData,input,setInput}=useContext(Context)
+
     return (
         <><div className="w-full">
             <Navbar></Navbar>
@@ -42,7 +46,8 @@ const Body = () => {
             {/* bottom part */}
             <div className="max-w-screen-lg mx-auto mt-24 text-center relative">
                 <div className="relative w-[90%] mx-auto">
-                    <input
+                    <input 
+                    onChange={(e)=>setInput(e.target.value)}value={input}
                         type="text"
                         placeholder="Enter a Prompt Here"
                         className="input input-bordered w-full rounded-[42px] pl-12 pr-12"
@@ -53,8 +58,8 @@ const Body = () => {
                     <div className="absolute top-1/2 right-12 transform -translate-y-1/2 text-2xl text-gray-500">
                         <MdKeyboardVoice />
                     </div>
-                    <div className="absolute top-1/2 right-3 transform -translate-y-1/2 text-2xl text-gray-500">
-                    <IoMdSend />
+                    <div  className="absolute top-1/2 right-3 transform -translate-y-1/2 text-2xl text-gray-500">
+                    <IoMdSend onClick={()=>onSent()}/>
                     </div>
                 </div>
             </div>
