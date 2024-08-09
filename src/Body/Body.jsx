@@ -10,7 +10,7 @@ import image from '../assets/Untitled design.png'
 import styled, { keyframes } from "styled-components";
 
 const Body = () => {
-    const { prevPrompts, setPrevPrompts, onSent, recentPrompt, setRecentPrompt, showResult, loading, resultData, input, setInput } = useContext(Context)
+    const {input, prevPrompts, setPrevPrompts, onSent, recentPrompt, setRecentPrompt, showResult, loading, resultData, setInput } = useContext(Context)
 
     const loaderAnimation = keyframes`
   0% {
@@ -31,10 +31,10 @@ const Body = () => {
 `;
 
     return (
-        <><div className="w-full">
+        <><div className="w-full  ">
             <Navbar></Navbar>
             {/* middle part */}
-            <div className=" max-w-screen-lg mx-auto pl-10 mt-28">
+            <div className=" max-w-screen-lg mx-auto pl-10 mt-28  animate-fadeIn duration-[2.5s]">
                 {!showResult ? <>
                     <div>
                         <p className="text-5xl text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-red-900 ">HelloDev.</p>
@@ -109,7 +109,8 @@ const Body = () => {
                         <MdKeyboardVoice />
                     </div>
                     <div className="absolute top-1/2 right-3 transform -translate-y-1/2 text-2xl text-gray-500">
-                        <IoMdSend onClick={() => onSent()} />
+                    {input? <IoMdSend onClick={() => onSent()} />:null}
+                       
                     </div>
                 </div>
             </div>
