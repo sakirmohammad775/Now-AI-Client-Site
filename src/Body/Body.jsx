@@ -34,7 +34,7 @@ const Body = () => {
         <><div className="w-full">
             <Navbar></Navbar>
             {/* middle part */}
-
+            <h3>hello</h3>
             <div className=" max-w-screen-lg mx-auto pl-10 mt-28">
                 {!showResult ? <>
                     <div>
