@@ -9,9 +9,6 @@ const Home = () => {
                 <div className="w-full flex min-h-screen  duration-[1.5s]">
                     <Sidebar></Sidebar> 
                     <Body></Body>
-                    <h3>add the new feature</h3>
-                    <h3>add the new feature</h3>
-                    <h3>add the new feature</h3>
                 </div>
             </div>
         </>
