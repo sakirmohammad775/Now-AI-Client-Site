@@ -12,7 +12,6 @@ const Home = () => {
                     <h3>add the new feature</h3>
                     <h3>add the new feature</h3>
                     <h3>add the new feature</h3>
-                    <h3>add the new feature</h3>
                 </div>
             </div>
         </>
