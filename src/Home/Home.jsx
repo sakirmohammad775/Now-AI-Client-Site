@@ -10,6 +10,10 @@ const Home = () => {
                     <Sidebar></Sidebar> 
                     <Body></Body>
                     <h3>add the new feature</h3>
+                    <h3>add the new feature</h3>
+                    <h3>add the new feature</h3>
+                    <h3>add the new feature</h3>
+                    <h3>add the new feature</h3>
                 </div>
             </div>
         </>
