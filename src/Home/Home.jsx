@@ -10,7 +10,6 @@ const Home = () => {
                     <Sidebar></Sidebar>
                     <Body></Body>
                     <h3>NowAI add to home page</h3>
-                    <h3>NowAI add to home page</h3>
                 </div>
             </div>
         </>
