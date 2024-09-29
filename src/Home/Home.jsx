@@ -10,9 +10,7 @@ const Home = () => {
                     <Sidebar></Sidebar> 
                     <Body></Body>
                     <div>
-                        <h3>
-                            NOWAI
-                        </h3>
+                        <h3></h3>
                     </div>
                 </div>
             </div>
